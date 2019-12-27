@@ -6,7 +6,7 @@ $(function() {
     var newDevourState = {
       devoured: devourState
     };
-  $.ajax("/api/burgers/" + id, {
+  $.ajax("/api/burgers" + id, {
       type: "PUT",
       data: newDevourState
     }).then(
@@ -36,7 +36,7 @@ $(function() {
     $(".undevour").on("click", function(event) {
       var id = $(this).data("id");
   
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/api/burgers" + id, {
         type: "DELETE"
       }).then(
         function() {
