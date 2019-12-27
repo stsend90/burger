@@ -9,7 +9,7 @@
 }
 .jumbotron {
   margin-bottom: 0px;
-  background-image: url("../img/burger_jumbo_bg.png");
+  background-image: url("/public/assets/img/burger_jumbo_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
