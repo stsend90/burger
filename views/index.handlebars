@@ -1,62 +1,43 @@
-<div class="container content">
-    <div class=jumbotron>
-    <h1 id="welcome" class="display-3">Welcome to</h1>
-    <h1 id="siteName" class="display-4">Eat-Da-Burger!</h1>
-     <p id="main-lead" class="lead">Add your favorite burger and it will appear below ready to be devoured!!!!  Once it appears below you can click  
-     <p id="main-lead" class="lead">on the "DEVOUR IT!" button and it will move to "Burger History".</p>
-    </div>
+<div class="container">
+    <h2>Eat-Da-Burger</h2>
 
-<div id="add-a-burger" class="row">
-    <form class="add-form">
-    <div class="form-group">
-    <label for="name_inout">Burger Name:</label>
-    <input type="text" id="name_input" name="burger_name">
-  
-    <button class="btn btn-primary btn-sm" type="submit">ADD</button>
-    </form>
-    </div>
-
-<div class="row">
-    <div class ="col-sm-5 text-center">
-        <h3>Burger Menu:</h3>
-        <ul>
-        {{#each burgers}}
-        {{#unless this.devoured }}
-        <ul>
-        <img class="burger burger-icon" src="/public/assets/img/burger.png" alt="mini_burger">
-        <br>
-        {{burger_name}}
-        <br>
-	    <button class="btn btn-success btn-sm devour" data-id="{{id}}" data-devourState="{{devoured}}">
-	    {{#unless devoured}}DEVOUR IT!{{/unless}}
-	    </button>
-	    
-        </ul>
-        {{/unless}}
-         {{/each}}
-        </ul>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                            <button type="button" class="eatburger btn btn-warning" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class=""></span>Devour</button>
+                            <hr>
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
         </div>
-    <div class ="col-sm-1"></div>
-    <div class ="col-sm-5 text-center">
-        <h3>Burger History:</h3>
-        <ul>
-        {{#each burgers}}
-        {{#if this.devoured }}
-      
-        <ul>
-        <img class="burger devoured-icon" src="/public/assets/img/burger_bite.png" alt="devoured_burger">
-        <br>
-        {{burger_name}}
-        <br>
-	    <button class="btn btn-danger btn-sm undevour" data-id="{{id}}" data-devourState="{{devoured}}">
-	    {{#if devoured}}DELETE{{/if}}
-	    </button>
-        </ul>
-        {{/if}}
-        {{/each}}
-        </ul>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <ul>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                            <button type="button" class="trashburger btn btn-danger" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class=""></span>Remove</button>
+                            <hr>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
     </div>
 
-</div>
-</div>
+    <div class="addBurger">
+        <form class="create-form">
+            <h5>Enter a burger and click the Submit button</h5>
+                <div class="form-group">
+                    <input type="text" id="newburger" name="burger">
+                </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
 </div>
