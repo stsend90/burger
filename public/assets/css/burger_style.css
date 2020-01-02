@@ -6,9 +6,9 @@ h2 {
     border-radius: 5px;
 }
 
-/* #color-override {
+#color-override {
     color: #fff;
-} */
+}
 
 #lefthead {
     color:black;
@@ -34,9 +34,6 @@ h2 {
 }
 
 .container {
-    background: url(/public/assets/img/burger1.jpg);
+    background-image: url(/public/assets/img/burger2.jpg);
 }
 
-.imgB{
-    background: url(/public/assets/img/burger2.jpg);
-}
