@@ -6,10 +6,6 @@ h2 {
     border-radius: 5px;
 }
 
-#color-override {
-    color: #fff;
-}
-
 #lefthead {
     color:black;
     text-align: center;
@@ -18,6 +14,7 @@ h2 {
 
 #eatbutton, #trashbutton {
     float: right;
+    margin: 5px;
 }
 
 #righthead {
@@ -29,7 +26,19 @@ h2 {
 .addBurger {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid;
     padding: 10px;
+    background: white;
+    color: black;
+}
+
+.container {
+    background-image: url(../img/burgerpic2.jpg);
+}
+
+.burgimg {
+    height: 200px;
+    width: 250;
+    border: 3px solid;
 }
 
