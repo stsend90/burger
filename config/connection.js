@@ -1,4 +1,4 @@
-var mysql = require("mysql");
+const mysql = require("mysql");
 
 
 if (process.env.JAWSDB_URL) {
