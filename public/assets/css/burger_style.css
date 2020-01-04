@@ -1,5 +1,10 @@
+
 h2 {
     text-align:center;
+    border: 2px solid black;
+    margin-left: 250px;
+    margin-right: 250px;
+    background:white;
 }
 
 #newburger {
